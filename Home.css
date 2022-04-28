@@ -11,17 +11,19 @@ h1 {
 }
 h2 {
 	background: gray;
+	color: white;
 	text-align: center;
 }
 
 h3 {
+	color: white;
 	background: gray;
 	text-align: center;
 }
 
-leftnav { background: #eee; }
-main { background: #f9f9f9; }
-rightnav { background: #eee; }
+leftnav { background: #d3d3d3; }
+main { background: white; }
+rightnav { background: blue; }
 body {
  display: grid;
  min-height: 100vh;
@@ -33,6 +35,7 @@ h1 {
  grid-column: 1 / 4;
 }
 leftnav {
+color:white;
  grid-row: 2;
  grid-column: 1 / 2;
  padding: 0 10px;
@@ -47,6 +50,7 @@ main {
  align-items: center;
 }
 rightnav {
+color:white;
  grid-row: 2;
  grid-column: 3 / 4;
  padding: 0 10px;
@@ -67,6 +71,7 @@ rightnav {
 }
 
 .question-container {
+	color:white;
 	width: 800px;
 	max-width: 80%;
 	background-color: white;

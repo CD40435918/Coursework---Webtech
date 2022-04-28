@@ -98,15 +98,20 @@ var quizStart = true;
 
 function setQuestions(id) {
 	
+	
+	//get question set
 	const questions = document.getElementById("question");
 	
+	//set question from set
 	question.innerText = questions[id].question;
 	
+	//sget question options from set
 	const b1 = document.getElementById('b1');
     const b2 = document.getElementById('b2');
     const b3 = document.getElementById('b3');
     const b4 = document.getElementById('b4');
 	
+	//display options for questions
 	b1.innerText = questions[id].answers[1].text;
     b2.innerText = questions[id].answers[2].text;
     b3.innerText = questions[id].answers[3].text;
@@ -126,15 +131,17 @@ function setQuestions(id) {
     })
 	
 	const score = document.getElementsByClassName("Submit");
+	//submit button needs implemented
 	
-	score[0].addEventListener("click", () => {
+	//commented out for error - fix
+	/*score[0].addEventListener("click", () => {
 		if (selected == "true") {
 			alert('CORRECT');
 		}else{
 			alert('WRONG - please try again');
 		}
 	)
-	
+	*/
 	
 	
 }
