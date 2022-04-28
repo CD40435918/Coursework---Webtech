@@ -6,6 +6,10 @@ function devAlert(){
 	alert('This is an example link to a quiz, please find the first link for a working quiz');
 }
 
+function visitHome() {
+	window.location.href='HomePage.html';
+}
+
 function visitDashboard() {
 	window.location.href='dashboard.html';
 }
@@ -22,54 +26,71 @@ function visitQB() {
 	window.location.href='QB.html';
 }
 
+function visitDemo() {
+	window.location.href='demoQuiz.html';
+}
+
 function displayQuestion() {
 	
 }
 
 
-var questions = [
+const questions = [
 	{
+		id:1,
 		question: "Who is Michael Jordan?",
 		answers: {
-			a: "Basketballer",
-			b: "Footballer",
-			c: "magician",
-			d: "F1 driver"
+			a: "Basketballer", TF: true,
+			b: "Footballer", TF: false,
+			c: "magician", TF: false,
+			d: "F1 driver" TF: false,
 		},
-		correct: 'a'
 	},
 	{
+		id:2,
 		question: "Who is Tom Brady?",
 		answers: {
-			a: "Basketballer",
-			b: "American Footballer",
-			c: "Plumber",
-			d: "Actor"
+			a: "Basketballer", TF: false,
+			b: "American Footballer", TF: true,
+			c: "Plumber", TF: false,
+			d: "Actor" TF: false,
 		},
-		correct: 'b'
 	},
 	{
+		id: 3,
 		question: "Who won the 2021 Euros?",
 		answers: {
-			a: "Spain",
-			b: "France",
-			c: "England",
-			d: "Italy"
+			a: "Spain", TF: false,
+			b: "France", TF: false,
+			c: "England", TF: false,
+			d: "Italy" TF: true,
 		},
-		correct: 'd'
 	},
 	{
+		id: 4,
 		question: "How many points is a try in Rugby",
 		answers: {
-			a: '5',
-			b: '7',
-			c: '6',
-			d: '3'
+			a: '5', TF: true,
+			b: '7', TF: false,
+			c: '6', TF: false,
+			d: '3' TF: false,
 		},
 		correct: 'a'
 	},
+]
+	
+var quizStart = true;
+
+function setQuestions(id) {
+	
+	const questions = document.getElementById("question");
+	
+	question.innerText = questions[id].q;
 	
 	
-function results() {
+	
+	
+	
+	
 	
 }
