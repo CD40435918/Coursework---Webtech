@@ -30,8 +30,24 @@ function visitDemo() {
 	window.location.href='demoQuiz.html';
 }
 
-function displayQuestion() {
-	
+function wrongAnswer() {
+	alert('WRONG - please try again');
+}
+
+function correctAnswer1() {
+	window.location.href='demoQ2.html';
+}
+
+function correctAnswer2() {
+	window.location.href='demoQ3.html';
+}
+
+function finishDemo() {
+	alert('CONGRATS - 3 out of 3!');
+}
+
+function demoDashQuiz() {
+	window.location.href='DashboardDemoQuiz.html';
 }
 
 
@@ -39,44 +55,43 @@ const questions = [
 	{
 		id:1,
 		question: "Who is Michael Jordan?",
-		answers: {
-			a: "Basketballer", TF: true,
-			b: "Footballer", TF: false,
-			c: "magician", TF: false,
-			d: "F1 driver" TF: false,
-		},
+		answers: [
+			{text: "Basketballer", isTrue: true},
+			{text: "Footballer", isTrue: false},
+			{text: "magician", isTrue: false},
+			{text: "F1 driver", isTrue: false}
+		]
 	},
 	{
 		id:2,
 		question: "Who is Tom Brady?",
-		answers: {
-			a: "Basketballer", TF: false,
-			b: "American Footballer", TF: true,
-			c: "Plumber", TF: false,
-			d: "Actor" TF: false,
-		},
+		answers: [
+			{a: "Basketballer", isTrue: false},
+			{b: "American Footballer", isTrue: true},
+			{c: "PLumber", isTrue: false},
+			{d: "Footballer", isTrue: false}
+		]
 	},
 	{
 		id: 3,
 		question: "Who won the 2021 Euros?",
-		answers: {
-			a: "Spain", TF: false,
-			b: "France", TF: false,
-			c: "England", TF: false,
-			d: "Italy" TF: true,
-		},
+		answers: [
+			{a: "Germany", isTrue: false},
+			{b: "Spain", isTrue: false},
+			{c: "England", isTrue: false},
+			{d: "Italy", isTrue: true}
+		]
 	},
 	{
 		id: 4,
 		question: "How many points is a try in Rugby",
-		answers: {
-			a: '5', TF: true,
-			b: '7', TF: false,
-			c: '6', TF: false,
-			d: '3' TF: false,
-		},
-		correct: 'a'
-	},
+		answers: [
+			{a: "5", isTrue: true},
+			{b: "6", isTrue: false},
+			{c: "7", isTrue: false},
+			{d: "8", isTrue: false}
+		]
+	}
 ]
 	
 var quizStart = true;
@@ -85,11 +100,40 @@ function setQuestions(id) {
 	
 	const questions = document.getElementById("question");
 	
-	question.innerText = questions[id].q;
+	question.innerText = questions[id].question;
 	
+	const b1 = document.getElementById('b1');
+    const b2 = document.getElementById('b2');
+    const b3 = document.getElementById('b3');
+    const b4 = document.getElementById('b4');
 	
+	b1.innerText = questions[id].answers[1].text;
+    b2.innerText = questions[id].answers[2].text;
+    b3.innerText = questions[id].answers[3].text;
+    b4.innerText = questions[id].answers[4].text;
 	
+	b1.addEventListener("click", () => {
+        selected = b1.value;
+    })
+	b2.addEventListener("click", () => {
+        selected = b2.value;
+    })
+	b3.addEventListener("click", () => {
+        selected = b3.value;
+    })
+	b4.addEventListener("click", () => {
+        selected = b5.value;
+    })
 	
+	const score = document.getElementsByClassName("Submit");
+	
+	score[0].addEventListener("click", () => {
+		if (selected == "true") {
+			alert('CORRECT');
+		}else{
+			alert('WRONG - please try again');
+		}
+	)
 	
 	
 	
